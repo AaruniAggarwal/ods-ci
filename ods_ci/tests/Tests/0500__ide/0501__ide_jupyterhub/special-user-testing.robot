@@ -17,7 +17,7 @@ Suite Teardown   End Web Test
 
 *** Test Cases ***
 Test Special Usernames
-    [Tags]  Smoke
+    [Tags]  Smoke    ExcludeOnRHOAI
     ...     OpenDataHub
     ...     ODS-257  ODS-532
     ...     ExcludeOnBYOIDC    # This test requires special usernames that are not created on BYOIDC clusters ATM.

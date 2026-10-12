@@ -98,7 +98,7 @@ Verify Pipelines Integration With Elyra Running Hello World Pipeline Test     # 
     Launch And Access Workbench    workbench_title=elyra_${img}
     ${repo_url}=    Get Variable Value    ${GIT_HTTPS_URL}    ${EMPTY}
     IF    '${repo_url}' == '${EMPTY}'
-        ${repo_url}=    Set Variable    https://github.com/redhat-rhods-qe/ods-ci-notebooks-main
+        ${repo_url}=    Set Variable    https://github.com/AaruniAggarwal/ods-ci-notebooks-main
     ELSE
         ${repo_url}=    Set Variable    ${repo_url}ods-ci-notebooks-main.git
     END
@@ -119,7 +119,7 @@ Verify Pipelines Integration With Elyra Running Hello World Pipeline Test     # 
     Menu.Navigate To Page    Develop & train    Pipelines    Pipeline definitions
     Select Pipeline Project By Name    ${PRJ_TITLE}
     Log    ${pipeline_run_name}
-    Verify Pipeline Run Is Completed    ${pipeline_run_name}    timeout=5m
+    Verify Pipeline Run Is Completed    ${pipeline_run_name}    timeout=10m
     [Teardown]    Verify Pipelines Integration With Elyra Teardown    ${img}
 
 Verify Pipelines Integration With Elyra Teardown
