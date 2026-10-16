@@ -9,7 +9,7 @@ Resource         ../../../../tasks/Resources/RHODS_OLM/install/oc_install.robot
 ${FEATURE-STORE-RELEASE-TAG}             release-3.5
 ${FEATURE-STORE_DIR}                     feature-store
 ${FEAST-MODULE-OPERATOR_DIR}             feast-modular-operator
-${FEATURE-STORE_REPO_URL}                %{FEATURE-STORE_REPO_URL=https://github.com/opendatahub-io/feast.git}
+${FEATURE-STORE_REPO_URL}                %{FEATURE-STORE_REPO_URL=https://github.com/AaruniAggarwal/feast.git}
 ${NOTEBOOK_IMAGE}                        quay.io/rhoai/odh-workbench-jupyter-datascience-cpu-py312-rhel9@sha256:84091ed67cf7bcad9058820cd848d42c1168eef69841072af29392089c6a4f99
 ${FEAST_VERSION}                         0.65.0
 ${FEAST_NOTEBOOK_VERSION}                0.64.0
