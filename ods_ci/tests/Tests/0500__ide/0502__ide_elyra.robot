@@ -98,7 +98,7 @@ Verify Pipelines Integration With Elyra Running Hello World Pipeline Test     # 
     Launch And Access Workbench    workbench_title=elyra_${img}
     ${repo_url}=    Get Variable Value    ${GIT_HTTPS_URL}    ${EMPTY}
     IF    '${repo_url}' == '${EMPTY}'
-        ${repo_url}=    Set Variable    https://github.com/redhat-rhods-qe/ods-ci-notebooks-main
+        ${repo_url}=    Set Variable    https://github.com/AaruniAggarwal/ods-ci-notebooks-main
     ELSE
         ${repo_url}=    Set Variable    ${repo_url}ods-ci-notebooks-main.git
     END

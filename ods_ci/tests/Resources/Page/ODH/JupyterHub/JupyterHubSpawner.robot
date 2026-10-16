@@ -101,8 +101,10 @@ Select Hardware Profile
     Wait Until Page Contains    Hardware profile    timeout=30
     ...    error=Hardware profile selector is not present in JupyterHub Spawner
 
-    # Wait for the hardware profile dropdown to be present
-    Wait Until Page Contains Element    xpath:${JUPYTERHUB_DROPDOWN_XPATH}    timeout=10
+    # Wait for the hardware profile dropdown to be rendered with a non-zero size. Presence in the DOM alone is
+    # not enough: clicking it before it is laid out raises "element not interactable: element has zero size".
+    Scroll Element Into View    xpath:${JUPYTERHUB_DROPDOWN_XPATH}
+    Wait Until Element Is Visible    xpath:${JUPYTERHUB_DROPDOWN_XPATH}    timeout=30
 
     # Check if the dropdown is disabled (only one profile available)
     ${is_disabled} =    Run Keyword And Return Status    Element Should Be Disabled    xpath:${JUPYTERHUB_DROPDOWN_XPATH}
@@ -118,8 +120,10 @@ Select Hardware Profile
         # If enabled, click dropdown and select the profile
         Element Should Be Enabled    xpath:${JUPYTERHUB_DROPDOWN_XPATH}
         Click Element    xpath:${JUPYTERHUB_DROPDOWN_XPATH}
-        Wait Until Page Contains Element    xpath://span[.="${hardware_profile}"]/../..    timeout=10
-        Click Element    xpath://span[.="${hardware_profile}"]/../..
+        Wait Until Page Contains Element    xpath://span[.="${hardware_profile}"]/../..    timeout=30
+        Scroll Element Into View    xpath://span[.="${hardware_profile}"]
+        Wait Until Element Is Visible    xpath://span[.="${hardware_profile}"]    timeout=10
+        Click Element    xpath://span[.="${hardware_profile}"]
     END
 
 Wait Until Accelerator Dropdown Exists
