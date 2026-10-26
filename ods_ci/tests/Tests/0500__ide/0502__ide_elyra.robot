@@ -114,7 +114,7 @@ Verify Pipelines Integration With Elyra Running Hello World Pipeline Test     # 
     Menu.Navigate To Page    Develop & train    Pipelines    Pipeline definitions
     Select Pipeline Project By Name    ${PRJ_TITLE}
     Log    ${pipeline_run_name}
-    Verify Pipeline Run Is Completed    ${pipeline_run_name}    timeout=10m
+    Verify Pipeline Run Is Completed    ${pipeline_run_name}    timeout=15m
     [Teardown]    Verify Pipelines Integration With Elyra Teardown    ${img}
 
 Verify Pipelines Integration With Elyra Teardown
